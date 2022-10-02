@@ -1,0 +1,30 @@
+<view class="main-admin bg-admin">
+
+    <view class="login shadow">
+
+        <view class=pic"><text class="icon-rankfill text-admin"></text></view>
+        <view class="hint">管理人员登录</view>
+
+        <view class="form-group margin-top">
+            <view class="title">账号：</view>
+            <input placeholder="请输入管理员账号" maxlength="30" placeholder-class="phc" model:value="{{name}}"></input>
+        </view>
+
+        <view class="form-group">
+            <view class="title">密码：</view>
+            <input placeholder="请输入管理员密码" maxlength="30" type="password" placeholder-class="phc" model:value="{{pwd}}"></input>
+        </view>
+
+        <button class="btn bg-admin margin-bottom" bindtap="bindLoginTap">点击登录</button>
+
+
+    </view>
+
+    <view class="foot-bottom">
+        <view style="margin-bottom: 40rpx;">
+            <text style="font-size: 24rpx;" bindtap="bindContact">© 联系我们\n</text>
+            <text style="font-size: 24rpx;" bindtap="bindContact">关于小程序</text>
+        </view>
+
+    </view>
+</view>

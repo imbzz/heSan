@@ -1,0 +1,10 @@
+{
+    "triggers": [
+       {
+         "name": "updatas",
+         "type": "timer",
+         "config": "0 */15 7-24 * * * *"
+          }
+    ]
+
+}

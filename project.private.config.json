@@ -1,0 +1,210 @@
+{
+    "setting": {
+        "compileHotReLoad": true
+    },
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/admin/meet/edit/admin_meet_edit",
+                    "pathName": "pages/admin/meet/edit/admin_meet_edit",
+                    "query": "id=b69f67c062c39b2609d902ff0766ccb3",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/admin/meet/edit/admin_meet_edit",
+                    "pathName": "pages/admin/meet/edit/admin_meet_edit",
+                    "query": "id=b69f67c062c39b2609d902ff0766ccb3",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/admin/meet/edit/admin_meet_edit",
+                    "pathName": "pages/admin/meet/edit/admin_meet_edit",
+                    "query": "id=0a4ec1f962c39b260e75013c49414fe5",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "发布页面",
+                    "pathName": "PPages/publish_text/publish_text",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "后台羽毛球场预约发布逻辑",
+                    "pathName": "pages/admin/meet/edit/admin_meet_edit",
+                    "query": "id=b69f67c062c39b2609d902ff0766ccb3",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "羽毛球显示",
+                    "pathName": "projects/A00/meet/detail/meet_detail",
+                    "query": "id=b69f67c062c39b2609d902ff0766ccb3",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "羽毛球预约前端",
+                    "pathName": "projects/A00/meet/detail/meet_detail",
+                    "query": "id=b69f67c062c39b2609d902ff0766ccb3",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "后台登录",
+                    "pathName": "pages/admin/index/login/admin_login",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "活动管理",
+                    "pathName": "pages/admin/meet/list/admin_meet_list",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "系统管理员",
+                    "pathName": "pages/admin/index/home/admin_home",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "创建",
+                    "pathName": "pages/admin/meet/edit/admin_meet_edit",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "创建",
+                    "pathName": "pages/admin/meet/edit/admin_meet_edit",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "头像登录",
+                    "pathName": "PPages/my/my",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "管理",
+                    "pathName": "pages/admin/index/home/admin_home",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/index/home/admin_home",
+                    "query": "name=admin&pwd=123456",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/about_us/about_us",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/edit/admin_news_edit",
+                    "query": "id=f950bb74632595800009f66c6b195e5f",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/list/admin_news_list",
+                    "query": "name=admin&pwd=123456&type=1",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/list/admin_news_list",
+                    "query": "name=admin&pwd=123456&type=1",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/edit/admin_news_edit",
+                    "query": "id=f950bb74632595800009f66c6b195e5f",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/list/admin_news_list",
+                    "query": "name=admin&pwd=123456&type=1",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/meet/time/admin_meet_time",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/edit/admin_news_edit",
+                    "query": "id=a1a9766b632831480016efd17ef1a4a5&name=admin&pwd=123456",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/meet/time/admin_meet_time",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/use/howtouse",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/about_us/about_us",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/list/admin_news_list",
+                    "query": "name=admin&pwd=123456&type=1",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/news/list/admin_news_list",
+                    "query": "name=admin&pwd=123456&type=1",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    },
+    "projectname": "yuyue",
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "libVersion": "2.25.2"
+}

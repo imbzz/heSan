@@ -1,0 +1,8 @@
+@import "../../../../style/project/base/appt.wxss";
+@import "../../skin/skin.wxss";
+@import "../../../../style/project/news_index_base.wxss";
+ 
+.img{
+    display: flex;
+    padding: 20rpx 25rpx;
+}

@@ -1,0 +1,38 @@
+/* pages/admin/index/use/howtouse.wxss */
+/* pages/about_us/about_us.wxss */
+.all{
+    padding: 30rpx;
+}
+.aboutUs{
+    word-break: keep-all;
+    width: auto;
+	box-sizing: border-box;
+	padding: 20rpx 30rpx 30rpx 30rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    background-color: white;
+    border-radius: 30rpx;
+}
+.miniapp{
+    word-break: keep-all;
+    margin-top: 30rpx;
+    width: auto;
+	box-sizing: border-box;
+	padding: 20rpx 30rpx 30rpx 30rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    background-color: white;
+    border-radius: 30rpx;
+}
+.title{
+    font-size: 34rpx;
+    font-weight: 1000;
+    margin-bottom: 20rpx;
+}
+.titleTwo{
+    font-size: 25rpx;
+    font-weight: 1000;
+    margin-bottom: 20rpx;
+}

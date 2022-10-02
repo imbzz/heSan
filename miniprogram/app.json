@@ -1,0 +1,54 @@
+{
+    "pages": [
+        "projects/A00/news/index/news_index",
+        "pages/admin/index/login/admin_login",
+        "pages/admin/index/home/admin_home",
+        "pages/admin/news/list/admin_news_list",
+        "pages/admin/mgr/log/admin_log_list",
+        "pages/admin/news/add/admin_news_add",
+        "pages/admin/news/edit/admin_news_edit",
+        "pages/admin/meet/time/admin_meet_time",
+        "pages/admin/news/use/howtouse",
+        "projects/A00/search/search",
+        "pages/about_us/about_us",
+        "cmpts/public/form/form_set/field/form_set_field"
+    ],
+    "window": {
+        "backgroundColor": "#f1f1f1",
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#2499f2",
+        "navigationBarTitleText": "学校场地查询",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#515151",
+        "selectedColor": "#000000",
+        "borderStyle": "black",
+        "backgroundColor": "#FFFFFF",
+        "list": [
+            {
+                "pagePath": "projects/A00/news/index/news_index",
+                "text": "首页",
+                "iconPath": "/projects/A00/skin/images/tabbar/shouye.png",
+                "selectedIconPath": "/projects/A00/skin/images/tabbar/shouye1.png"
+            },
+            {
+                "pagePath": "pages/admin/index/login/admin_login",
+                "text": "发布",
+                "iconPath": "/projects/A00/skin/images/tabbar/fabusekuai.png",
+                "selectedIconPath": "/projects/A00/skin/images/tabbar/fabusekuai1.png"
+            }
+        ]
+    },
+    "permission": {},
+    "useExtendedLib": {
+        "weui": true
+    },
+    "usingComponents": {
+        "cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+        "cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+        "cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+    },
+    "sitemapLocation": "sitemap.json",
+    "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,7 @@
+{
+	"usingComponents": { 
+    }, 
+    "backgroundColor": "#2499f2",
+	"disableScroll": true, 
+	"navigationBarTitleText": "学校场地查询"
+}

@@ -1,0 +1,42 @@
+<!--pages/admin/index/use/howtouse.wxml-->
+<view class="all">
+    <view class="aboutUs">
+        <text class="title" style="font-size: 40rpx;">操作指南</text>
+        <view>
+        </view>
+        <text class="title">用户端</text>
+        <text style="margin-bottom: 20rpx;">支持功能
+            ㅤ学校场地查询
+            ㅤ三种反馈按键供后台记录反馈次数计算比例更新状态
+              反馈自动计算,15分钟更新一次,无需管理员操作
+        </text>
+        <text class="title">超级管理员</text>
+        <text style="margin-bottom: 20rpx;">创建，编学校场地信息功能:
+              ---场地简介:(如 电子信息楼学校场地)
+              ---场地备注:(如 免费)
+              ---时段设置:(开始和结束时间自动变换休息状态)
+              ---联系电话:(选填)
+        </text>
+            
+         <text class="titleTwo">状态修改功能 :</text>
+         <text>---手动修改场地畅通,忙碌,拥挤状态,仅超级管理员可删除场地
+         </text>
+         
+         <text class="titleTwo">场地关闭功能 :</text>
+         <text> ---手动关闭场地,显示关闭状态,仅超级管理员可关闭场地
+         </text>
+        
+        
+   
+        
+        <text class="title">普通管理员</text>
+        <text>仅支持功能
+            <text class="titleTwo">场地状态修改 :</text>
+            <text>---场地状态不匹配时手动修改场地,畅通,忙碌,拥挤状态
+            </text>
+         
+        </text>
+    </view>
+
+
+</view>

@@ -1,0 +1,153 @@
+<template name="baseListTpl">
+    <view class="meet-list-box sub-margin-bottom" style="margin-bottom:200rpx;">
+        <block wx:for="{{dataList}}" wx:key="key">
+
+            <!--上下图 Begin-->
+            <view wx:if="{{listMode=='upimg'}}" class="item card-project shadow-project item-upimg" bindtap="url" data-url="../../{{item.type}}/detail/{{item.type}}_detail?id={{item._id}}">
+                <image mode="widthFix" lazy-load="{{true}}" class="loading" src="{{item.pic}}" />
+                <view class="upimg-title content-cut-two">{{item.title}}</view>
+                <view class="data-desc content-cut-two">{{item.desc}}</view>
+                <view class="data-status">
+                    <text wx:if="{{item.type=='meet'}}" class="icon-remind margin-right-xxs"></text>{{item.ext}}
+                </view>
+            </view>
+            <!--上下图 END-->
+
+            <!--右边图 Begin-->
+            <view wx:elif="{{listMode=='rightpic'}}" class="item card-project shadow-project item-rightpic" bindtap="url" data-url="../../{{item.type}}/detail/{{item.type}}_detail?id={{item._id}}">
+                <view class="title content-cut-two">{{item.title}}</view>
+                <view class="desc">
+                    <text class="content-cut-three">{{item.desc}}</text>
+                    <image class="pic loading" lazy-load="{{true}}" mode="aspectFill" src="{{item.pic}}">
+                    </image>
+                </view>
+                <view class="data">
+                    <text class="margin-right">{{item.ext}}</text>
+                </view>
+            </view>
+            <!--右边图 END-->
+
+            <!--左边图 Begin-->
+            <view wx:elif="{{listMode=='leftpic'}}" class="item card-project shadow-project item-leftpic">
+                <!--标题和状态 begin-->
+                <view class="data" style="margin-bottom: 20rpx;">
+
+                    <view class="desc" wx:if="{{item.status==1&&item.adminRest==0}}" style="background-color:#0bb07b;align-items: center;top: -100rpx;width:85rpx;padding: 10rpx;margin-top: 10rpx;">
+                        <text class="text-white" style="text-align: center; font-size: 30rpx;">畅通</text>
+                    </view>
+                    <view class="desc" wx:if="{{item.status==0&&item.adminRest==0}}" style="background-color:#c9ced6; align-items: center;top: -100rpx;width:85rpx;padding: 10rpx;margin-top: 10rpx;">
+                        <text class="text-white" style="text-align: center;font-size: 30rpx;">休息</text>
+                    </view>
+                    <view class="desc" wx:if="{{item.status==2&&item.adminRest==0}}" style="background-color: #ff8f00;align-items: center;top: -100rpx;width:85rpx;padding: 10rpx;margin-top: 10rpx;">
+                        <text class="text-white" style="text-align: center;font-size: 30rpx;">忙碌</text>
+                    </view>
+                    <view class="desc" style="background-color: #f03d3d;align-items: center;top: -100rpx;width:85rpx;padding: 10rpx;margin-top: 10rpx;" wx:if="{{item.status==3&&item.adminRest==0}}">
+                        <text class="text-white" style="text-align: center;font-size: 30rpx;">拥挤</text>
+                    </view>
+                    <view class="desc" style="background-color: #252424;align-items: center;top: -100rpx;width:85rpx;padding: 10rpx;margin-top: 10rpx;" wx:if="{{item.adminRest==1}}">
+                        <text class="text-white" style="text-align: center;font-size: 30rpx;">关闭</text>
+                    </view>
+                    <text class="margin-right" style="font-size: 30rpx;color: #000;margin-left: 15rpx;height: 10rpx;">{{item.desc}}</text>
+                </view>
+                <!--标题和状态 end-->
+                <!--详细内容 begin-->
+                <!-- <view class="data">
+                    <view class="text1">范围：</view>
+                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.cateName}}</text>
+                </view>
+                <view class="data">
+                    <view class="text1">街道：</view>
+                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.cateNameTwo}}</text>
+                </view>
+                <view class="data">
+                    <view class="text1">单位：</view>
+                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.cateNameThree}}</text>
+                </view> -->
+
+                <view class="data">
+                    <view class="text1">开放时间：</view>
+                    <text style="font-size: 26rpx;color: #000;" wx:for-item='Item' wx:for="{{item.adminDaysSet}}">{{Item.start}}-{{Item.end}}　</text>
+                </view>
+                <!-- <view class="data">
+                    <view class="text1">时段备注：</view>
+                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.titleTime}}</text>
+                </view> -->
+
+                <view class="data">
+                    <view class="text1">场地备注：</view>
+                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.titleRemark}}</text>
+                </view>
+                <view class="data">
+                    <view class="text1">电话：</view>
+                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.titleMobile}}</text>
+                </view>
+                <view class="data">
+                    <view class="text1">状态更新时间：</view>
+                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.updateTime}}</text>
+                </view>
+                <!--详细内容 end-->
+                <!--实时反馈 begin-->
+                <view class="line" style="width: 90%;margin: auto;height: 1px;text-align: center;font-size: 24rpx;color: #aaa;background: #ccc;margin-top: 25px;margin-bottom: 15px;">
+                    <span style="position: relative;top: -8px;background: #fff;padding: 0px 10px;font-size: 25rpx;">请协助我们进行实时反馈</span>
+                </view>
+
+                
+
+
+
+                <view style="display: flex;padding: 20rpx;justify-content:space-between;">
+
+                    <view class="desc" style="background-color:#0bb07b;align-items: center;top: -100rpx;width: 180rpx;" bindtap="bindAddStatus" data-status='1' data-id="{{item._id}}" data-ifrest="{{item.status}}">
+                        <text class="text-white" style="text-align: center; font-size: 30rpx;">畅通</text>
+                    </view>
+                    <view class="desc" style="background-color:#ff8f00;align-items: center;top: -100rpx;width: 180rpx" bindtap="bindAddStatus" data-status='2' data-id="{{item._id}}" data-ifrest="{{item.status}}">
+                        <text class="text-white" style="text-align: center; font-size: 30rpx;">忙碌</text>
+                    </view>
+                    <view class="desc" style="background-color:#f03d3d;align-items: center;top: -100rpx;width: 180rpx" bindtap="bindAddStatus" data-status='3' data-id="{{item._id}}" data-ifrest="{{item.status}}">
+                        <text class="text-white" style="text-align: center; font-size: 30rpx;">拥挤</text>
+                    </view>
+                </view>
+                <!--实时反馈 end-->
+
+            </view>
+            <!--左边图 END-->
+
+            <!--左大图 Begin-->
+            <view wx:elif="{{listMode=='leftbig'||listMode=='leftbig2' ||listMode=='leftbig3'}}" class="item card-project shadow-project item-{{listMode}}" bindtap="url" data-url="../../{{item.type}}/detail/{{item.type}}_detail?id={{item._id}}">
+                <image mode="aspectFill" lazy-load="{{true}}" class="leftbig-left loading" src="{{item.pic}}">
+                </image>
+                <view class="leftbig-right">
+                    <view class="leftbig-title content-cut-one">{{item.title}}</view>
+                    <view class="leftbig-desc">
+                        <text class="{{listMode=='leftbig3'?'content-cut-two':'content-cut-three'}}">{{item.desc}} </text>
+                    </view>
+                    <view class="data">
+                        <view class="meet-tag-list text-cut">
+                        </view>
+                        <view class="meet-status"><text wx:if="{{item.type=='meet'}}" class="icon-remind margin-right-xxs"></text>{{item.ext}}</view>
+                    </view>
+                </view>
+            </view>
+            <!--左大图 END-->
+
+            <!--大文字 Begin-->
+            <view wx:elif="{{listMode=='bigtext'}}" class="item card-project shadow-project item-bigtext" bindtap="url" data-url="../../{{item.type}}/detail/{{item.type}}_detail?id={{item._id}}">
+                <view class="left">
+                    <image mode="aspectFill" lazy-load="{{true}}" class="{{item.pic?'loading':''}}" src="{{item.pic}}" />
+                </view>
+
+                <view class="right">
+                    <view class="bigtext-title content-cut-one">{{item.title}}</view>
+                    <view class="data-desc content-cut-one">{{item.desc}}</view>
+                    <view class="data-desc content-cut-one">{{item.titleTwo}}</view>
+                </view>
+                <view class="data-status">
+                    <text wx:if="{{item.type=='meet'}}" class="icon-remind margin-right-xxs"></text>{{item.ext}}
+                </view>
+            </view>
+            <!--大文字 END-->
+
+        </block>
+
+    </view>
+</template>

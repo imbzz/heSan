@@ -1,0 +1,14 @@
+<view wx:if="{{!_params}}" class="margin-top load loading text-l load-project" ></view>
+<block wx:else >
+    <view class="item card-project shadow-projsect item-leftpic" style="width: 699rpx;margin-left: 25rpx;margin-top: 20rpx;background-color: #ffffff;margin-bottom: 15rpx;">
+        <view class="img">
+            <image style="height: 180rpx;" src="../../../../images/1.jpg"></image>
+        </view>
+        <view class="tips" style="padding: 10rpx 0rpx 20rpx 30rpx;font-size: 26rpx;color: #999999;">
+            温馨提示：繁忙程度仅供参考，具体电话咨询
+        </view>
+    </view>
+    
+    <import src="../../../../tpls/project/news_index_tpl.wxml" />
+    <template is="newsIndexTpl" data="{{showUp:false,upImg:'',skin,dataList,_params,sortItems,sortMenus,search,listMode:listMode||'leftpic',isTotalMenu:false}}" />
+</block>

@@ -1,0 +1,133 @@
+<block wx:if="{{isAdmin}}">
+	<cmpt-comm-list type="admin-news" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" name="{{name}}" pwd="{{pwd}}" route="admin/news_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="功能待开发" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd"> 
+			<button bindtap="bindeCreatNews" data-url="../add/admin_news_add?name={{name}}&pwd={{pwd}}" class="btn radius bg-admin text-white margin-right-s"><text class="icon-roundadd margin-right-xxs"></text>创建学校场地</button>
+		</view>
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录</view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="header">
+					<view class="left text-cut"><text wx:if="{{item.NEWS_ORDER==0}}" class=" margin-right-xxs text-orange" style="font-weight:normal;font-size:24rpx">[置顶]</text> {{item.NEWS_DESC}}
+					</view>
+					<!-- <view class="right">
+						<text wx:if="{{item.NEWS_STATUS==1}}" class="text-black">正常</text>
+						<text wx:elif="{{item.NEWS_STATUS==0}}" class="text-orange">停用</text>
+                        <text wx:if="{{item.NEWS_STATUS==2}}" class="text-black">忙碌</text>
+						<text wx:elif="{{item.NEWS_STATUS==3}}" class="text-orange">拥挤</text>
+					</view> -->
+                
+                    <view class="right" wx:if="{{item.NEWS_STATUS==1&&item.NEWS_STATUS_ADMIN_REST==0&&item.NEWS_STATUS_REST==0}}" style="background-color:rgb(17, 172, 17);">
+                    <text class="text-white">畅通</text>
+                    </view>
+                    <view class="right" wx:if="{{item.NEWS_STATUS==0&&item.NEWS_STATUS_ADMIN_REST==0&&item.NEWS_STATUS_REST==1}}" style="background-color:rgb(187, 202, 187);">
+                    <text class="text-white">休息</text>
+                    </view>
+                    <view class="right" wx:if="{{item.NEWS_STATUS==2&&item.NEWS_STATUS_ADMIN_REST==0&&item.NEWS_STATUS_REST==0}}" style="background-color:orange;">
+                    <text class="text-white">忙碌</text>
+                    </view>
+
+                    <view class="right" style="background-color: rgb(223, 29, 29);"wx:if="{{item.NEWS_STATUS==3&&item.NEWS_STATUS_ADMIN_REST==0&&item.NEWS_STATUS_REST==0}}">
+                    <text class="text-white">拥挤</text>
+                    </view>
+                    <view class="right" style="background-color: rgb(27, 26, 26);"wx:if="{{item.NEWS_STATUS_ADMIN_REST==1}}">
+                    <text class="text-white">关闭</text>
+                    </view>
+				  </view>
+            
+
+				<view class="info">
+					<!-- <view class="info-item">
+						<view class="title">范围</view>
+						<view class="mao">：</view>
+						<view class="content">
+                        {{item.NEWS_CATE_NAME}}
+						</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">街道</view>
+						<view class="mao">：</view>
+						<view class="content">【{{item.NEWS_CATE_NAME_TWO}}】</view>
+					</view> 
+
+					<view class="info-item">
+						<view class="title">单位</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_CATE_NAME_THREE}} <text class="margin-left-xxs text-grey"></text></view>
+					</view>  -->
+					 
+                    <view class="info-item">
+						<view class="title">简介</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_DESC}} <text class="margin-left-xxs text-grey"></text></view>
+					</view> 
+                    <view class="info-item">
+						<view class="title">场地备注</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_TITLE_REMARK}} <text class="margin-left-xxs text-grey"></text></view>
+					</view> 
+                    <view class="info-item">
+						<view class="title">开放时段</view>
+						<view class="mao">：</view>
+						<view class="content" wx:for="{{item.NEWS_DAYS_SET}}">{{item.start}} - {{item.end}}<text class="margin-left-xxs text-grey"></text></view>
+					</view> 
+                    <!-- <view class="info-item">
+						<view class="title">时段备注</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_TITLE_TIME}} <text class="margin-left-xxs text-grey"></text></view>
+					</view>  -->
+                    <view class="info-item">
+						<view class="title">电话</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_MOBILE}} <text class="margin-left-xxs text-grey"></text></view>
+					</view> 
+
+					<view class="info-item">
+						<view class="title">更新时间</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.NEWS_ADD_TIME}}</view>
+					</view>
+
+					<view class="oprt">
+						<view bindtap="url" data-url="../edit/admin_news_edit?id={{item._id}}&name={{name}}&pwd={{pwd}}" class="btn round margin-right-s">编辑</view>
+
+						<!-- <view bindtap="bindSortTap" wx:if="{{item.NEWS_HOME>0}}" data-id="{{item._id}}" data-sort="0" class="btn margin-right-s">上首页</view> -->
+
+						<!-- <view bindtap="bindSortTap" wx:if="{{item.NEWS_HOME==0}}" data-id="{{item._id}}" data-sort="9999" class="btn margin-right-s">取消上首页</view> -->
+
+						<view bindtap="bindStatusSelectTap" data-id="{{item._id}}" data-ifrest="{{item.NEWS_STATUS_REST}}"class="btn margin-right-s">状态修改</view> 
+
+						<!-- <view bindtap="bindReviewTap" data-id="{{item._id}}" class="btn margin-right-s"><text class="icon-attention margin-right-xxs"></text>预览</view>  -->
+
+                        <view bindtap="bindOpenOrClose" data-id="{{item._id}}" class="btn margin-right-s"><text class="icon-attention margin-right-xxs" wx:if="{{item.NEWS_STATUS_ADMIN_REST==1}}">点击开启</text>
+                        <text class="icon-attention margin-right-xxs" wx:if="{{item.NEWS_STATUS_ADMIN_REST==0}}">点击关闭</text>
+                        </view> 
+
+                        <view bindtap="bindSortTap" wx:if="{{item.NEWS_ORDER>0}}" data-id="{{item._id}}" data-sort="0" class="btn margin-right-s"><text class="icon-cascades margin-right-xxs">点击置顶</text></view>
+
+						<view bindtap="bindSortTap" wx:if="{{item.NEWS_ORDER==0}}" data-id="{{item._id}}" data-sort="9999" class="btn margin-right-s"><text class="icon-cascades margin-right-xxs">取消置顶</text></view>
+
+                        <!-- <view bindtap="bindSortTap" data-id="{{item._id}}" data-sort="{{item.NEWS_ORDER}}" class="btn margin-right-s">
+                        <text class="icon-cascades margin-right-xxs " wx:if="{{item.NEWS_ORDER==0}}">取消置顶</text>
+                        <text class="icon-cascades margin-right-xxs " wx:if="{{item.NEWS_ORDER==9999}}">点击置顶</text>
+                        </view> -->
+
+					</view>
+				</view>
+			</view>
+
+		</view> 
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+ 
+
+	</cmpt-comm-list>
+
+</block>
