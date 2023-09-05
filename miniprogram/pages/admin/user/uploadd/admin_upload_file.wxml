@@ -1,0 +1,62 @@
+<!-- <view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-grey"></view>  -->
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+	<view class="form-box shadow">
+		<view class="form-group" style="padding:20rpx 15rpx 20rpx;">
+			<view class="title-desc text-red">
+				※ 数据说明: 针对当前学院导入数据,请保证本学院数据在同一个文件上传
+			</view>
+		</view>
+        <view class="form-group">
+            <view class="title must">
+				选择新的文件 <text class="text-normal"></text>
+			</view>
+			<view class="cover-img">
+                <view wx:if="{{newUrl}}" class="close-img" catchtap="catchDelFileTap"><text class="icon-refresh margin-left-xs"></text><text class="test-admin margin-left-xs" style="font-size:32rpx">更换文件</text></view>
+                <view class="upload-img"  wx:if="{{!newUrl}}" catchtap="bindChooseFile"><text class="icon-cameraadd"></text><text class="test-admin" style="font-size:32rpx">选择文件</text></view>
+			</view> 
+        </view>
+        
+        <view class="form-group">
+			<view class="title">新临时文件链接</view>
+		</view>
+		<view class="form-group align-start" bindtap="url" data-type="copy" data-url="{{newUrl}}">
+			<textarea maxlength="500" placeholder="未选择新文件" placeholder-class="phc" value="{{newUrl}}" style="height:50rpx"></textarea>
+		</view>
+
+		<view class="form-group">
+			<view class="title">旧文件链接<text wx:if="{{time}}" class="text-gray text-s margin-left-s">({{time}} 生成):共{{sumNumber}}条</text> </view>
+			<button hover-class="button-hover" class="btn bg-admin text-white shadow" bindtap="url" data-type="copy" data-url="{{oldUrl}}">复制</button>
+		</view>
+		<view class="form-group align-start" bindtap="url" data-type="copy" data-url="{{oldUrl}}">
+			<textarea maxlength="500" placeholder="数据文件尚未上传，点击下方按钮上传" placeholder-class="phc" value="{{oldUrl}}" style="height:50rpx"></textarea>
+		</view>
+
+		<block wx:if="{{oldUrl}}">
+			<view class="form-group" style="padding:20rpx 15rpx 20rpx;">
+				<view class="title-desc">
+					<text user-select="true">※ <text class="text-black">链接使用说明</text>
+						1. 以上链接为旧文件链接
+						2. 为保障信息安全，请勿外传数据链接
+						3. 重新上传文件时需要选择新的文件,否则默认为清除旧文件
+                        4. 外页面有专门状态清除按键,无需删除重新上传文件修改学生上报状态
+					</text>
+				</view>
+			</view>
+		</block>
+	</view>
+
+	<button bindtap="bindFileAddSubimit" class="btn-admin margin-top">{{oldUrl?'重新上传数据文件':'上传数据文件'}} (Excel文件)</button> 
+
+    <!-- <button bindtap="bindFileAddSubimit" class="btn-admin margin-top">{{oldUrl?'重新上传数据文件':'上传数据文件'}} (Excel文件)</button>  -->
+	<!-- <button wx:if="{{url}}" bindtap="bindOpenTap" class="btn-admin bg-purple light">直接打开数据文件</button>   -->
+
+	<button  bindtap="bindFileDel" class="btn-admin margin-bottom-s bg-red light">删除旧数据文件</button>  
+
+    <!-- <button wx:if="{{oldUrl}}" bindtap="bindFileDel" class="btn-admin margin-bottom-s bg-red light">删除旧数据文件</button> -->
+
+	<view class="form-group" wx:if="{{oldUrl}}">
+		<view class="title-desc text-red"><text class="icon-info margin-right-xs"></text>请勿随意删除数据文件,如果删除此处文件,后台学生数据也会删除,届时需重新上传文件
+		</view>
+	</view>
+</view>

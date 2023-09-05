@@ -1,6 +1,11 @@
 {
     "pages": [
         "projects/A00/news/index/news_index",
+        "projects/A00/more/more",
+        "projects/A00/stuSubmit/stuSubmit",
+        "projects/A00/outPut/outPut",
+        "projects/A00/dataDetail/dataDetail",
+        "projects/A00/stuDetail/stuDetail",
         "pages/admin/index/login/admin_login",
         "pages/admin/index/home/admin_home",
         "pages/admin/news/list/admin_news_list",
@@ -11,7 +16,11 @@
         "pages/admin/news/use/howtouse",
         "projects/A00/search/search",
         "pages/about_us/about_us",
-        "cmpts/public/form/form_set/field/form_set_field"
+        "cmpts/public/form/form_set/field/form_set_field",
+        "pages/admin/user/list/admin_user_list",
+        "pages/admin/user/export/admin_user_export",
+        "pages/admin/user/uploadd/admin_upload_file",
+        "cmpts/lib/wxa-plugin-canvas/index/index,js"
     ],
     "window": {
         "backgroundColor": "#f1f1f1",
@@ -33,8 +42,8 @@
                 "selectedIconPath": "/projects/A00/skin/images/tabbar/shouye1.png"
             },
             {
-                "pagePath": "pages/admin/index/login/admin_login",
-                "text": "发布",
+                "pagePath": "projects/A00/more/more",
+                "text": "更多",
                 "iconPath": "/projects/A00/skin/images/tabbar/fabusekuai.png",
                 "selectedIconPath": "/projects/A00/skin/images/tabbar/fabusekuai1.png"
             }
@@ -47,7 +56,20 @@
     "usingComponents": {
         "cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
         "cmpt-picker": "/cmpts/public/picker/picker_cmpt",
-        "cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+        "cmpt-modal": "/cmpts/public/modal/modal_cmpt",
+        "van-tabs": "/vantui/@vant/weapp/tabs/index",
+        "van-tab": "/vantui/@vant/weapp/tab/index",
+        "van-uploader": "/vantui/@vant/weapp/uploader/index",
+        "van-field": "/vantui/@vant/weapp/field/index",
+        "van-radio": "/vantui/@vant/weapp/radio/index",
+        "van-radio-group": "/vantui/@vant/weapp/radio-group/index",
+        "van-picker": "/vantui/@vant/weapp/picker/index",
+        "van-popup": "/vantui/@vant/weapp/popup/index",
+        "van-cell": "/vantui/@vant/weapp/cell/index",
+        "van-search": "/vantui/@vant/weapp/search/index",
+        "van-sticky": "/vantui/@vant/weapp/sticky/index",
+        "van-notify": "/vantui/@vant/weapp/notify/index",
+        "van-dialog": "/vantui/@vant/weapp/dialog/index"
     },
     "sitemapLocation": "sitemap.json",
     "lazyCodeLoading": "requiredComponents"

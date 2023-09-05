@@ -68,13 +68,23 @@ class AdminHomeService extends BaseAdminService {
 	 * 管理员登录
 	 * @param {*} cloudID 
 	 */
-	async adminLogin(name, password) {
+	async adminLogin({
+        name, 
+        pwd,
+        param,
+        college
+    }) {
         let find=0;
         for(let key=0;key<config.SUPER_ADMIN_LIST.length;key++){
             if(config.SUPER_ADMIN_LIST[key].ADMIN_NAME==name){
                 for(let j in config.SUPER_ADMIN_LIST[key].ADMIN_PWD){
-                    if(config.SUPER_ADMIN_LIST[key].ADMIN_PWD[j]==password){
-                        find=1;
+                    let actionNameArr = config.SUPER_ADMIN_LIST[key].ADMIN_PWD[j].split('@');
+                    if(college==''&&actionNameArr[0]==pwd&&actionNameArr[1]==param){
+                        find=1;//管理者登录 //写的冗杂为了比较容易看懂
+                        break;
+                    }else if(actionNameArr[0]==pwd&&actionNameArr[1]==param&&college==actionNameArr[2]){
+                        find =1;//导出登录
+                        break;
                     }
                 }
             }
@@ -109,7 +119,7 @@ class AdminHomeService extends BaseAdminService {
         let adminList=admin.ADMIN_ADMINER_LIST;
         let type;
         for(let k in adminList){
-            if(password==adminList[k].pwd){
+            if(pwd==adminList[k].pwd){
                 type=adminList[k].type;
             }
         }

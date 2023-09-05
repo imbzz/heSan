@@ -1,7 +1,7 @@
 /**
  * Notes: 云函数业务主逻辑
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux0730 (wechat)
- * Date: 2020-09-05 04:00:00 
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY c1756612361@qq.com
+ * Date: 2022-09-05 04:00:00 
  */
 const util = require('../utils/util.js');
 const cloudBase = require('../cloud/cloud_base.js');
@@ -173,8 +173,10 @@ async function app(event, context) {//event包含上传的数据 context为上�
         // await controller['initSetup']();//调用initSetup函数 undefine//未了解自己看
 
         //------------------------------------------------------------------
+      
+            let result = await controller[actionName]();
 
-        let result = await controller[actionName]();//预约编辑函数editMeet//insertMeet
+       //预约编辑函数editMeet//insertMeet
         //没有返回值 此处出问题
         //------------------------------------------------------------------
 
@@ -244,7 +246,7 @@ async function app(event, context) {//event包含上传的数据 context为上�
 function beforeApp(method) {//暂时不会走到这里
 	switch (method) {
 		case 'noDemo': {
-			return appUtil.handlerAppErr('本系统仅为客户体验演示，后台提交的操作均不生效！如有需要请联系作者微信cclinux0730', appCode.LOGIC);
+			return appUtil.handlerAppErr('本系统仅为客户体验演示，后台提交的操作均不生效！如有需要请联系作者qq:1756612361', appCode.LOGIC);
 		}
 	}
 	console.error('事前处理, Method Not Find = ' + method);

@@ -1,6 +1,6 @@
 /**
  * Notes: 资讯实体
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2020-10-28 19:20:00 
  */
 
@@ -51,6 +51,7 @@ NewsModel.DB_STRUCTURE = {
        NEWS_STATUS_NOMAL:'int|true|comment=畅通反馈数',
        NEWS_STATUS_BUSY:'int|true|comment=繁忙反馈数',
        NEWS_STATUS_ADMIN_REST:'int|true|comment=管理者关闭',
+       NEWS_STATUS_LEVEL:'int|true|comment=场地状态梯度',
        
 	// NEWS_PIC: 'array|false|default=[]|comment=附加图片  [cloudId1,cloudId2,cloudId3...]',
 

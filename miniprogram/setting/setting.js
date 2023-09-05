@@ -1,6 +1,9 @@
  module.exports = {
  	//### 环境相关 
- 	CLOUD_ID: 'cloud1-5gde1hoac3a7d47f', //你的云环境id 
+     CLOUD_ID: 'hesuanofficial-8gp0jtoi3d51cbd9f', //你的云环境id 
+     
+    //### 学生文件存储路径
+    FILE_ADMIN_STUDENT:'admin/studentFile/',
 
  	// #### 版本信息 
  	VER: 'build 2022.09',
@@ -38,6 +41,6 @@
 
 
  	// #### 后台相关
- 	ADMIN_TOKEN_EXPIRE: 3600 * 2, //管理员过期时间2小时有效 秒  
+ 	ADMIN_TOKEN_EXPIRE: 3600 * 2 * 10, //管理员过期时间2小时有效 秒  
 
  }

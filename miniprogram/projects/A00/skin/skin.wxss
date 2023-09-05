@@ -1,15 +1,15 @@
 page {
 	background-color: #f2f2f2;
 
-	--projectColor: #24C68A;
+	--projectColor: #2499f2;
 	--projectColorLight: #CCF3EB;
-	--projectCompareColor: #24C68A;
+	--projectCompareColor: #2499f2;
 
 	/*#### 父组件日历颜色定义*/
 	/* 整体颜色 */
 	--calendarPageColor: #fff;
 	/* 加重颜色*/
-	--calendarMainColor: #24C68A !important;
+	--calendarMainColor: #0c80da !important;
 	/* 加重的亮颜色 用于选中日期的数据小圆点 */
 	--calendarLightColor: #5bf1ba;
 }

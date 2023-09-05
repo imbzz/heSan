@@ -1,7 +1,7 @@
 /**
  * Notes: 后台管理模块业务逻辑
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
- * Date: 2020-11-14 07:48:00 
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
+ * Date: 2022-11-14 07:48:00 
  */
 
 const BaseBiz = require('./base_biz.js');
@@ -102,7 +102,7 @@ class AdminBiz extends BaseBiz {
 				confirmText: '确定',
 				success: res => {
 					wx.reLaunch({
-						url: '/pages/admin/index/login/admin_login',
+						url: '/projects/A00/more/more',
 					});
 					return false;
 				}

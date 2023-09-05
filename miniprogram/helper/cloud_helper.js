@@ -12,6 +12,7 @@
  const contentCheckHelper = require('../helper/content_check_helper.js');
  const pageHelper = require('../helper/page_helper.js');
 
+
  const CODE = {
  	SUCC: 200,
  	SVR: 500, //服务器错误  
@@ -173,14 +174,14 @@
  					if (err && err.errMsg && err.errMsg.includes('-501000') && err.errMsg.includes('Environment not found')) {
  						wx.showModal({
  							title: '',
- 							content: '未找到云环境ID，请按手册检查前端配置文件setting.js的配置项【CLOUD_ID】或咨询作者微信cclinux0730',
+ 							content: '未找到云环境ID，请按手册检查前端配置文件setting.js的配置项【CLOUD_ID】或咨询作者qq:1756612361',
  							showCancel: false
  						});
 
  					} else if (err && err.errMsg && err.errMsg.includes('-501000') && err.errMsg.includes('FunctionName')) {
  						wx.showModal({
  							title: '',
- 							content: '云函数未创建或者未上传，请参考手册或咨询作者微信cclinux0730',
+ 							content: '云函数未创建或者未上传，请参考手册或咨询作者微信qq:1756612361',
  							showCancel: false
  						});
 
@@ -303,6 +304,34 @@
  	console.log('dataList END');
 
  }
+/** 
+ * 单个文件上传到云空间
+ * @param {*} file 本地路径
+ * @param {*} dir 路径前缀
+ * @param {*} key  唯一标识(此处用账号+学院字符(待定))
+ * @return 返回cloudId
+ * 
+ */
+async function transTempFileOne(file, dir, key) {
+////
+   let filePath = file;
+   let ext = filePath.match(/\.[^.]+?$/)[0];//match函数干嘛
+
+   // 是否为临时文件
+   if (filePath.includes('tmp') || filePath.includes('temp') || filePath.includes('wxfile')) {
+       let rd = dataHelper.genRandomNum(100000, 999999);
+    //    const cloud = cloudBase.getCloud();
+      let upload =  await wx.cloud.uploadFile({
+           cloudPath: key ? dir + key + '/' + rd + ext : dir + rd + ext,//云存储路径
+           filePath: filePath, // 文件本地路径
+       });
+       if (!upload || !upload.fileID) return;
+       return {
+           cloudUrl:upload.fileID,
+       }
+   }
+
+}
 
  /**
   * 图片上传到云空间
@@ -379,5 +408,6 @@
  	callCloudData,
  	callCloudSumbitAsync,
  	transTempPics,
- 	transTempPicOne
+    transTempPicOne,
+    transTempFileOne
  }

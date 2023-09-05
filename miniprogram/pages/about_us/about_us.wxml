@@ -2,11 +2,11 @@
 <view class="all">
     <view class="aboutUs">
         <text class="title">联系我们</text>
-        <view>
-            广州大学计算机科学与网络工程学院\n2021级创新实践团队开发
+        <view user-select="{{true}}">
+            <text user-select="{{true}}">本项目曾经上线,但已经过时,仅供学习参考</text>
         </view>
         <view>
-            联系我们：020-39366922
+            <text user-select="{{true}}">联系我们：qq:1756612361</text>
         </view>
         <button class='button' open-type="feedback" size='mini'>
             <text class='title-button'>一键反馈</text>
@@ -15,15 +15,8 @@
 
     <view class="miniapp">
         <text class="title">关于小程序</text>
-        <text>广州大学计算机科学与网络工程学院2021级创新实践</text>
-        <text>团队成立于2022年6月5日，团队成员均为广州大学计</text>
-        <text>算机科学与网络工程学院在校学生，团队立足广大，</text>
-        <text>服务社会，致力于微信小程序、APP以及电脑应用的</text>
-        <text>开发工作，积极探索图像识别、语音识别等先进技术</text>
-        <text>在实际开发工作中的应用。团队秉承服务社会根本宗</text>
-        <text>旨，已开发出多款服务社会、服务学校的微信小程序</text>
-        <text>获得学校与社会的广泛认可。团队免费承接公益项目</text>
-        <text>开发并提供更新维护服务，如有需要，可在工作时间</text>     
-        <text>联系指导老师。</text>      
+        <view>
+            <text user-select="{{true}}"></text>
+        </view>
     </view>
 </view>

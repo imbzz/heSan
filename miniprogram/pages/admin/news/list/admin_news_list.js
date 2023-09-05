@@ -110,6 +110,9 @@ Page({
     },
     ///上首页函数
 	bindSortTap: async function (e) {
+         let type = parseInt(this.data.type);
+    
+        if(type==1){
 		if (!AdminBiz.isAdmin(this)) return;
         
 		let id = e.currentTarget.dataset.id;
@@ -137,7 +140,14 @@ Page({
 			});
 		} catch (e) {
 			console.log(e);
-		}
+        }
+    }else{
+        wx.showToast({
+            title: '超级管理者才可开启关闭',
+            icon:'none',
+            duration:1500,
+          })
+    }
 	},
 
 

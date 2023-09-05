@@ -1,6 +1,6 @@
 /**
  * Notes: 设置管理
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2021-07-11 07:48:00 
  */
 
@@ -37,7 +37,7 @@ class AdminSetupService extends BaseAdminService {
             console.log(e);
         }
         
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/** 联系我们设置 */
@@ -67,7 +67,7 @@ class AdminSetupService extends BaseAdminService {
         }
         
 
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/** 小程序码 */

@@ -53,14 +53,7 @@
 	align-items: center;
 }
 
-.foot-bottom {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	bottom: 50rpx;
-}
+
 
 .site-footer {
 	color: #fff !important;

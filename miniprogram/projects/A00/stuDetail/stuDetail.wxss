@@ -1,0 +1,100 @@
+/* projects/A00/stuDetail/stuDetail.wxss */
+
+@import '../../../style/project/base/admin.wxss';
+.top {
+    display: flex;
+    background: #ffffff;
+}
+.top .btnSerch{
+    margin: 10rpx;
+    padding: 5rpx 30rpx;
+    /* padding-right:230rpx; */
+    width: 65vw;
+    font-size: 24rpx;
+    color: #999999;
+}
+.top .btn{
+    background: #2499f2;
+    color: #ffffff;
+    font-size: 23rpx;
+    font-weight: 550;
+    padding: 5rpx 20rpx;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    height: 65rpx;
+   width:35vw;
+}
+.card {
+    display: relative;
+    background: #ffffff;
+    margin: 20rpx 20rpx;
+    padding: 10rpx 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+}
+.card .title{
+    font-size: 34rpx;
+    font-weight: 550;
+    padding-bottom: 10rpx;
+}
+.card .statu{
+    display: absolute;
+    height: 60rpx;
+    width: 120rpx;
+    padding-top: 7rpx;
+    padding-left: 20rpx;
+    margin-top: -60rpx;
+    margin-left: 540rpx;
+    background-color: #0bb07b;
+    border-radius: 10rpx;
+    color: #fff;
+}
+.card .btn1{
+    color: #ffffff;
+    background-color: #2499f2;
+    height: 60rpx;
+    width: 120rpx;
+    font-size: 26rpx;
+    font-weight: 1000;
+    margin-top: -60rpx;
+    margin-right: 30rpx;
+}
+/* 搜索图标 */
+@font-face {
+    font-family: "iconfont"; /* Project id 3724112 */
+    src: url('//at.alicdn.com/t/c/font_3724112_3537y82sbd1.woff2?t=1666511354491') format('woff2'),
+         url('//at.alicdn.com/t/c/font_3724112_3537y82sbd1.woff?t=1666511354491') format('woff'),
+         url('//at.alicdn.com/t/c/font_3724112_3537y82sbd1.ttf?t=1666511354491') format('truetype');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 12px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-sousuo:before {
+    content: "\e62f";
+  }
+  /* 下载图标 */
+  @font-face {
+    font-family: "iconfont"; /* Project id 3724125 */
+    src: url('//at.alicdn.com/t/c/font_3724125_xonc4wjawxq.woff2?t=1666511690060') format('woff2'),
+         url('//at.alicdn.com/t/c/font_3724125_xonc4wjawxq.woff?t=1666511690060') format('woff'),
+         url('//at.alicdn.com/t/c/font_3724125_xonc4wjawxq.ttf?t=1666511690060') format('truetype');
+  }
+  
+  .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 11px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-xiazai:before {
+    content: "\e600";
+  }
+  

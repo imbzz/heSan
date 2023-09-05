@@ -1,6 +1,6 @@
 /**
  * Notes: 用户控制模块
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2022-01-22 10:20:00 
  */
 
@@ -12,6 +12,41 @@ const AdminUserService = require('../../service/admin/admin_user_service.js');
 const timeUtil = require('../../../framework/utils/time_util.js');
 
 class AdminUserController extends BaseAdminController { 
+
+
+   /**
+    * 关闭或开启学生状态
+    */
+    async openStudentStatus(){
+        await this.isAdmin();
+        let rules = {
+            adminId:'string|must',
+            studentNumber:'string|must',
+            className:'string|must',
+        }
+        let input = this.validateData(rules);
+        let service = new AdminUserService();
+        let result = await service.openStudentStatus(input);
+        return result;
+    }
+
+    /**
+     * 获取各分类人数
+     */
+    async getDiffKindStudents(){
+        await this.isAdmin();
+
+        let rules = {
+            adminId:'string|must',
+            college:'string|must|comment=学院中文',
+            ifopen:'string|must',
+        }
+        // 取得数据
+		let input = this.validateData(rules);
+		let service = new AdminUserService();
+        let result = await service.getDiffNumber(input);
+        return result;
+    }
 
 
 	/** 用户信息 */
@@ -71,6 +106,40 @@ class AdminUserController extends BaseAdminController {
 			list[k].USER_ADD_TIME = timeUtil.timestamp2Time(list[k].USER_ADD_TIME);
 			list[k].USER_LOGIN_TIME = list[k].USER_LOGIN_TIME ? timeUtil.timestamp2Time(list[k].USER_LOGIN_TIME) : '未登录';
 
+		}
+		result.list = list;
+		return result;
+    } 
+    
+    /** 用户列表 */
+	async getStudentList() {
+		await this.isAdmin();
+
+		// 数据校验
+		let rules = {
+            adminId:'string|must',
+            password:'string|must',
+			search: 'string|min:1|max:30|name=搜索条件',
+			sortType: 'string|name=搜索类型',
+			sortVal: 'name=搜索类型值',
+			orderBy: 'object|name=排序',
+			whereEx: 'object|name=附加查询条件',
+			page: 'required|int|default=1',
+			size: 'int',
+			isTotal: 'bool',
+			oldTotal: 'int',
+		};
+
+		// 取得数据
+		let input = this.validateData(rules);
+
+		let service = new AdminUserService();
+		let result = await service.getStudentList(input);
+
+		// 数据格式化
+		let list = result.list;
+		for (let k in list) {
+			list[k].STUDENTS_EDIT_TIME = timeUtil.timestamp2Time(list[k].STUDENTS_EDIT_TIME);
 		}
 		result.list = list;
 		return result;

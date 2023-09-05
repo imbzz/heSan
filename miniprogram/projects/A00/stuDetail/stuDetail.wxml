@@ -1,0 +1,51 @@
+<!--projects/A00/stuDetail/stuDetail.wxml-->
+<!-- 顶部  van-sticky实现吸顶效果 -->
+<van-sticky offset-top="{{0}}">
+    <view class="top">
+        <view>
+            <!-- type: '', // 来自哪个业务标识
+		returnUrl: '', //搜索完返回哪个地址
+		cacheName: '', //本业务搜索历史缓存
+		search: '', //搜索关键字 -->
+
+            <button class="btnSerch" bindtap="url" data-url="../search/search?type=statusOfStudentsFind&search={{search}}">
+                <view wx:if="{{search==''}}" class="iconfont icon-sousuo"> 请输入搜索关键词</view>
+                <view wx:if="{{search!=''}}" class="iconfont icon-sousuo">{{search}}</view>
+            </button>
+        </view>
+
+        <!-- condition: '2',//状态(0/1)
+        adminId:'admin',//账号(admin)
+        password:'academy_jw',//密码(学院对应密码)
+        college:'计算机科学与网络工程学院',//学院(中文名)
+        kind:'本科',//年级(本科/研究生/博士生/全部)
+        openid:'ozRHh5cEVI4TM6TxPbuCptCnA4Yw',
+        searchKey:'计科191',//搜索值 -->
+        <button bindtap="url" data-url="../../../pages/admin/user/export/admin_user_export?condition={{condition}}&adminId={{adminId}}&password={{password}}&college={{college}}&kind={{kind}}&searchKey={{search}}&ifopen={{ifopen}}" class="btn mid radius bg-admin text-white margin-right-s"><text class="icon-down margin-right-xxs"></text>导出下方数据</button>
+    </view>
+</van-sticky>
+<!-- 标签页 -->
+<van-tabs active="{{ active }}" sticky offset-top="{{32}}" bind:change="onChange">
+    <view wx:if="{{dataList && dataList.total }}" class="load text-black">共有{{dataList.total}}条符合条件记录 </view>
+    <van-tab title="{{tapName}}">
+        <!-- 卡片展示 -->
+
+        <view wx:for="{{dataList.list}}" wx:key="_id">
+            <view class="card">
+                <view class="title">{{item.STUDENTS_NAME}}</view>
+                <view wx:if="{{item.STUDENTS_IFOPEN=='1'}}" style="background-color:{{item.STUDENTS_STATUS=='1'? '#0bb07b' : '#f03d3d' }}" class="statu">{{item.STUDENTS_STATUS=='1'? '已':'未'}}上报</view>
+                <view wx:if="{{item.STUDENTS_IFOPEN=='0'}}" style="background-color:rgb(16, 17, 17)" class="statu">已关闭</view>
+                <view class="info">
+                    <view>学院：<text>{{item.STUDENTS_COLLEGE}}</text></view>
+                    <view>班级：<text>{{item.STUDENTS_CLASS}}</text></view>
+                    <view>学号：<text>{{item.STUDENTS_NUMBER}}</text></view>
+                    <view>身份：<text>{{item.STUDENTS_KIND}}</text></view>
+                    <view>最近核酸时间：<text>{{item.STUDENTS_EDIT_TIME}}</text></view>
+                </view>
+                <button class="btn1" wx:if="{{type=='2'}}" style="background: {{item.STUDENTS_IFOPEN=='0'?'#999999':'#2499f2'}};" bindtap="changeOpen" data-info="{{item}}">{{item.STUDENTS_IFOPEN=='0'?'开启':'关闭'}}</button>
+
+            </view>
+        </view>
+
+    </van-tab>
+</van-tabs>

@@ -24,7 +24,7 @@ module.exports = Behavior({
 
 			let type = options.type;
 			let returnUrl = options.returnUrl;
-
+            let search = options.search;
 			let cacheName = 'SERACH_HIS_' + type;
 
 			let hisKeys = SearchBiz.getHistory(cacheName);
@@ -34,6 +34,7 @@ module.exports = Behavior({
 				});
 
 			this.setData({
+                search,
 				hisKeys,
 				type,
 				cacheName,
@@ -71,8 +72,8 @@ module.exports = Behavior({
 
 		url: function (e) {
 			pageHelper.url(e, this);
-		},
-
+        },
+        
 
 		/**
 		 *  点击确认搜索
@@ -90,7 +91,7 @@ module.exports = Behavior({
 				search,
 				hisKeys
 			});
-
+            
 			let prevPage = pageHelper.getPrevPage();
 			// 直接调用上一个页面的setData()方法，把数据存到上一个页面中去
 			prevPage.setData({

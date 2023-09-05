@@ -166,7 +166,6 @@ module.exports = Behavior({
                  //bug2:过去的日期没有去掉
                 let callback = async()=>{
                     try{
-                       
                         let _openid= await wx.getStorageSync('openid')
                         let where={
                             _openid,

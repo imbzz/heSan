@@ -200,11 +200,130 @@
                     "query": "name=admin&pwd=123456&type=1",
                     "launchMode": "default",
                     "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/user/Uplooad/admin_upload_file",
+                    "query": "condition=0",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/user/list/admin_user_list",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/user/Uploaded/admin_upload_file",
+                    "query": "condition=0",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/user/Uploaded/admin_upload_file",
+                    "query": "condition=0",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/user/list/admin_user_list",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/user/list/admin_user_list",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/dataDetail/dataDetail",
+                    "query": "college=%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2&adminIdadmin=undefined&password=academy_jw",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/dataDetail/dataDetail",
+                    "query": "college=%25E8%25AE%25A1%25E7%25AE%2597%25E6%259C%25BA%25E4%25B8%258E%25E7%25BD%2591%25E7%25BB%259C%25E5%25B7%25A5%25E7%25A8%258B%25E5%25AD%25A6%25E9%2599%25A2&adminIdadmin=undefined&password=academy_jw",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/stuDetail/stuDetail",
+                    "query": "name=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2undefined",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/index/home/admin_home",
+                    "query": "name=admin&pwd=ZXH000",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/stuDetail/stuDetail",
+                    "query": "college=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2&adminId=admin&password=academy_jw&type=3&kind=%E6%9C%AC%E7%A7%91&condition=0&export=%E6%9C%AC%E7%A7%91%20%E6%9C%AA%E5%AE%8C%E6%88%90",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/stuSubmit/stuSubmit",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/admin/user/export/admin_user_export",
+                    "query": "condition=0",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/stuSubmit/stuSubmit",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/stuSubmit/stuSubmit",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/stuDetail/stuDetail",
+                    "query": "college=%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AD%A6%E9%99%A2&adminId=admin&password=academy_jw&type=3&kind=%E5%85%A8%E9%83%A8&condition=0&ifopen=1&export=%E5%85%A8%E9%83%A8%20%E6%9C%AA%E5%AE%8C%E6%88%90",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "projects/A00/outPut/outPut",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
     },
-    "projectname": "yuyue",
+    "projectname": "Seller",
     "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-    "libVersion": "2.25.2"
+    "libVersion": "2.25.4"
 }

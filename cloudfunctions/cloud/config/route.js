@@ -1,7 +1,7 @@
 /**
  * Notes: 路由配置文件
- * User: CC
- * Date: 2020-10-14 07:00:00
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
+ * Date: 2022-12-23 19:20:00
  */
 
 module.exports = { 
@@ -85,11 +85,24 @@ module.exports = {
 
 	'admin/user_list': 'admin/admin_user_controller@getUserList',
 	'admin/user_detail': 'admin/admin_user_controller@getUserDetail',
-	'admin/user_del': 'admin/admin_user_controller@delUser#noDemo',  
+    'admin/user_del': 'admin/admin_user_controller@delUser#noDemo',  
+    'admin/user_data_count':'admin/admin_user_controller@getDiffKindStudents',
+    'admin/student_list': 'admin/admin_user_controller@getStudentList',
+    'admin/student_ifopen_change':'admin/admin_user_controller@openStudentStatus',
 
 	'admin/user_data_get': 'admin/admin_export_controller@userDataGet',
 	'admin/user_data_export': 'admin/admin_export_controller@userDataExport',
-	'admin/user_data_del': 'admin/admin_export_controller@userDataDel#noDemo',
+    'admin/user_data_del': 'admin/admin_export_controller@userDataDel#noDemo',
+    
 
-
+    'admin/student_data_get':'admin/admin_export_controller@studentDataGet',
+    'admin/student_data_export': 'admin/admin_export_controller@studentDataExport',
+    'admin/student_data_del':'admin/admin_export_controller@StudentDataDel',
+ 
+    'admin/student_file_upload':'admin/admin_upload_controller@uploadStudentFile',
+    'admin/student_file_dataget':'admin/admin_upload_controller@FileDataGet',
+    'admin/student_database_insert':'admin/admin_upload_controller@addStudentInfo2Database',
+    'admin/student_file_delete':'admin/admin_upload_controller@DeleteStudentFile',
+    'admin/student_finish_submit':'admin/admin_upload_controller@studentFinishSubmit',
+    
 }

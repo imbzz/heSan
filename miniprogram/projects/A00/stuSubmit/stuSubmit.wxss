@@ -1,0 +1,17 @@
+/* projects/A00/stuSubmit/stuSubmit.wxss */
+.stuForm {
+    margin: 25rpx 0 0 0;
+}
+
+.stuPlace {
+    background-color: #fff;
+    padding-top: 10rpx;
+}
+
+.tittle {
+    margin: 10rpx 0rpx 10rpx 20rpx;
+}
+.tips{
+    padding: 20rpx 30rpx 0rpx 30rpx;
+    color: #999999;
+}

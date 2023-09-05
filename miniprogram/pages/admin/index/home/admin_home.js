@@ -1,25 +1,34 @@
 const AdminBiz = require('../../../../biz/admin_biz.js');
 const pageHelper = require('../../../../helper/page_helper.js');
 const cloudHelper = require('../../../../helper/cloud_helper.js');
+import Notify from '../../../../vantui/@vant/weapp/notify/notify';
 
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
-	data: {},
+	data: {
+        isloginmessage: false, //是否提示登录成功
+    },
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: async function (options) {
+        let pages = getCurrentPages(); //页面对象
+        let prevpage = pages[pages.length - 2]; //上一个页面对象
+        if(prevpage.route == "pages/admin/index/login/admin_login"){
+            this.data.isloginmessage = true;
+        }
+
 		if (!AdminBiz.isAdmin(this)) return;
         this.setData({
             name:options.name,
             pwd:options.pwd,
         })
-
-		this._loadDetail(options.name,options.pwd);
+        this._loadDetail(options.name,options.pwd);
+        
 	},
 
 	/**
@@ -45,7 +54,8 @@ Page({
             }
 			let opts = {
 				title: 'bar'
-			}
+            }
+            //首页的活动数获取
 			let res = await cloudHelper.callCloudData('admin/home', param, opts);
 			this.setData({
 				data: res
@@ -67,7 +77,12 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+        // 登录成功提醒
+        if(this.data.isloginmessage){
+            Notify({ type: 'success', message: '登录成功！' });
+            this.data.isloginmessage = false;
+        }
+        
 	},
 
 	/**
@@ -93,7 +108,7 @@ Page({
 		let callback = function () {
 			AdminBiz.clearAdminToken();
 			wx.reLaunch({
-				url: '../login/admin_login',
+				url: '../../../../projects/A00/more/more',
 			});
 		}
 		pageHelper.showConfirm('您确认退出?', callback);

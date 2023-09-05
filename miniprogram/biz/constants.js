@@ -1,6 +1,6 @@
  /**
   * Notes: 通用常量
-  * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+  * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
   * Date: 2020-11-14 07:48:00 
   */
 

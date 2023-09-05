@@ -1,7 +1,7 @@
 /**
  * Notes: 数据持久化与操作模块
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
- * Date: 2020-09-04 04:00:00 
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
+ * Date: 2022-09-04 04:00:00 
  */
 
 const dbUtil = require('./db_util.js');
@@ -138,7 +138,16 @@ class Model {
 	 * 批量插入数据
 	 * @param {*} data 
 	 */
-	static async insertBatch(data = [], size = 1000) {
+	static async insertBatch(data = [], size = 1000,params='') {
+
+        if(params!=''){
+            let idField = 'ADMIN_KEY';
+            for(let k in data){
+                if(!util.isDefined(data[k][idField])){
+                    data[k][idField]=params;
+                }
+            }
+        }
 		// 自动ID
 		if (this.ADD_ID) {
 			let idField = this.FIELD_PREFIX + 'ID';
@@ -308,6 +317,18 @@ class Model {
 		return await dbUtil.getAll(this.CL, where, fields, orderBy, size);
 	}
 
+    
+    /**
+	 * 搜索条件情况下取得所有记录(待了解)
+	 * @param {*} where 
+	 * @param {*} fields 
+	 * @param {*} orderBy 
+     * @param {*} searchKey
+	 * @param {*} size  
+	 */
+	static async searchGetAllBig(where, fields, orderBy,searchKey, size = 1000) {
+		return await dbUtil.gsearchGetAllBig(this.CL, where, fields, orderBy,searchKey, size);
+	}
 
 	/**
 	 * 大数据情况下取得所有记录(待了解)

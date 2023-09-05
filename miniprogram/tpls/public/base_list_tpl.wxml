@@ -79,7 +79,7 @@
                 </view>
                 <view class="data">
                     <view class="text1">电话：</view>
-                    <text class="margin-right" style="font-size: 28rpx;color: #000;">{{item.titleMobile}}</text>
+                    <text user-select="{{true}}" class="margin-right" style="font-size: 28rpx;color: #000;">{{item.titleMobile}}</text>
                 </view>
                 <view class="data">
                     <view class="text1">状态更新时间：</view>

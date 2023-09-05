@@ -7,7 +7,7 @@
 				<text wx:if="{{search.length > 0}}" bindtap="bindClearKeyTap" class="icon-roundclosefill text-l text-gray clear"></text>
 			</view>
 			<view class="action">
-				<button bindtap="url" data-type="back" class="btn bg-project text-white shadow-blur round">搜索</button>
+				<button bindtap="bindSearchConfirm" data-type="back" class="btn bg-project text-white shadow-blur round">搜索</button>
                 <!-- 只能搜最大的标签 要优化 -->
 			</view>
 		</view>

@@ -1,6 +1,6 @@
 /**
  * Notes: 导出模块后台管理-控制器
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2022-01-15 10:20:00 
  */
 
@@ -67,7 +67,7 @@ class AdminExportController extends BaseAdminController {
 	/** 当前是否有导出文件生成 */
 	async userDataGet() {
 		await this.isAdmin();
-
+        
 		// 数据校验
 		let rules = {
 			isDel: 'int|must', //是否删除已有记录
@@ -90,7 +90,8 @@ class AdminExportController extends BaseAdminController {
 
 		// 数据校验
 		let rules = {
-			condition: 'string|name=导出条件',
+            condition: 'string|name=完成上报条件',
+
 		};
 
 		// 取得数据
@@ -113,8 +114,69 @@ class AdminExportController extends BaseAdminController {
 		let service = new AdminExportService();
 		return await service.deleteUserDataExcel();
 	}
+    /************** 学生上报数据导出 BEGIN ********************* */
+    /** 当前是否有导出文件生成 */
+	async studentDataGet() {
+		await this.isAdmin();
 
+		// 数据校验
+		let rules = {
+            isDel: 'int|must', //是否删除已有记录
+            adminId:'string|must',
+            college:'string|must',
+            openid:'string|must',
+		};
 
+		// 取得数据
+		let input = this.validateData(rules);
+
+		let service = new AdminExportService();
+
+		if (input.isDel === 1)
+			await service.deleteStudentDataExcel(input.adminId+input.college+input.openid); //先删除 
+	
+		return await service.getStudentDataURL(input.adminId+input.college+input.openid);
+	}
+
+	/** 导出数据 */
+	async studentDataExport() {
+		await this.isAdmin();
+
+		// 数据校验
+		let rules = {
+            adminId:'string|name=账号id',
+            condition: 'string|name=导出条件',
+            kind:'string|name=年级',
+            college:'string|name=学院中文名',
+            openid:'string|name=openid',
+            searchKey:'string|name=搜索条件',
+            ifopen:'string|must',
+		};
+
+		// 取得数据
+		let input = this.validateData(rules);
+
+		let service = new AdminExportService();
+		return await service.exportStudentDataExcel(input);
+	}
+
+	/** 删除导出的用户数据 */
+	async StudentDataDel() {
+		await this.isAdmin();
+
+		// 数据校验
+		let rules = {
+            adminId:'string|must',
+            college:'string|must',
+            openid:'string|must',
+        };
+
+		// 取得数据
+		let input = this.validateData(rules);
+
+		let service = new AdminExportService();
+		return await service.deleteStudentDataExcel(input);
+	}
 }
 
 module.exports = AdminExportController;

@@ -1,6 +1,6 @@
 /**
  * Notes: 注册登录模块业务逻辑
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2020-11-14 07:48:00 
  */
 
@@ -89,7 +89,7 @@ class PassportBiz extends BaseBiz {
 		}
 	}
 ///////////////////////////////////////////
-	static async adminLogin(name, pwd, that) {
+	static async adminLogin(name, pwd, college,param,that) {
 		if (name.length < 5 || name.length > 30) {
 			wx.showToast({
 				title: '账号输入错误(5-30位)',
@@ -106,10 +106,14 @@ class PassportBiz extends BaseBiz {
 			return;
 		}
 
-		let params = {
-			name,
-			pwd
-		};
+        let params = {
+                name,
+                pwd,
+                param,
+                college
+            };
+    
+		
 		let opt = {
 			title: '登录中'
 		};
@@ -128,9 +132,33 @@ class PassportBiz extends BaseBiz {
                // type: 1
                // __proto__: Object
                // msg: "admin/login:ok"
-				wx.reLaunch({
+               if(res.data.type==0||res.data.type==1){
+                wx.navigateTo({
 					url: '/pages/admin/index/home/admin_home?name='+name+'&pwd='+pwd,
 				});
+               }else if(res.data.type==3&&college!=''&&that.data.type==3){
+                that.setData({
+                    type:3,
+                })
+                wx.navigateTo({
+                url: '/projects/A00/dataDetail/dataDetail?college='+college+'&adminId='+name+'&password='+pwd+'&type=3',
+              });
+               }else if(res.data.type==3&&college!=''&&that.data.type==2){
+                that.setData({
+                    type:2,
+                })
+                wx.navigateTo({
+                url: '/projects/A00/dataDetail/dataDetail?college='+college+'&adminId='+name+'&password='+pwd+'&type=2',
+              });
+               }else if(res.data.type==2){
+                wx.navigateTo({
+                    url: '/pages/admin/index/home/admin_home?name='+name+'&pwd='+pwd+'&type='+res.data.type,
+                  });
+               }
+               let type=res.data.type;
+			return {
+               type,
+            }
 			});
 		} catch (e) {
 			console.log(e);

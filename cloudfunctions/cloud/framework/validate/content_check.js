@@ -1,7 +1,7 @@
 /**
  * Notes: 内容审核
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
- * Date: 2020-09-05 04:00:00 
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
+ * Date: 2022-09-05 04:00:00 
  */
 
 const AppError = require('../core/app_error.js'); 

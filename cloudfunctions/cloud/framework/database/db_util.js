@@ -1,21 +1,58 @@
 /**
  * Notes: 数据库基本操作
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
- * Date: 2020-09-05 04:00:00 
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
+ * Date: 2022-09-05 04:00:00 
  */
 
 const util = require('../utils/util.js');
 const dataUtil = require('../utils/data_util.js');
 
-const cloudBase = require('../cloud/cloud_base.js');
+
 const MAX_RECORD_SIZE = 1000; //数据库每次可取最大记录数 在小程序端默认及最大上限为 20，在云函数端默认及最大上限为 1000
 const DEFAULT_RECORD_SIZE = 20; //默认显示记录数
 
+const cloudBase = require('../cloud/cloud_base.js');
 // 云函数入口文件
 const cloud = cloudBase.getCloud();
 const db = cloud.database();
 const dbCmd = db.command; // 命令
 const dbAggr = dbCmd.aggregate; // 聚合
+
+
+   /**
+  * 文件数组上传到云空间
+  * @param {*} fileList (文件路径的数组)
+  * @param {*} dir (云存储前缀)
+  * @param {*} key 唯一标识(此处用账号+学院字符(待定))
+  */
+ async function transTempFiles(fileList, dir, key) {
+    for (let i = 0; i < fileList.length; i++) {
+
+        let filePath = fileList[i];
+        let ext = filePath.match(/\.[^.]+?$/)[0];//match函数干嘛
+
+        // 是否为临时文件
+        if (filePath.includes('tmp') || filePath.includes('temp') || filePath.includes('wxfile')) {
+            let rd = dataUtil.genRandomNum(100000, 999999);
+            await cloud.uploadFile({
+                cloudPath: key ? dir + key + '/' + rd + ext : dir + rd + ext,//云存储路径
+                filePath: filePath, // 文件本地路径
+            }).then(res => {
+                imgList[i] = res.fileID;
+            }).catch(error => {
+                // handle error TODO:剔除图片
+                //此处要添加上传本地文件失败后的操作 return错误提示
+                console.error(error);
+            })
+        }
+    }
+
+    return {
+        imgList,
+        
+    }
+}    
+
 
 /**
  * 批量添加数据
@@ -658,7 +695,8 @@ async function getList(collectionName, where, fields = '*', orderBy = {}, page =
 	}
 
 	let offset = 0; //记录偏移量 防止新增数据列表重复 
-	// 计算总页数
+    // 计算总页数
+    try{
 	if (isTotal) {
 		let total = await count(collectionName, where);
 		data.total = total;
@@ -669,7 +707,10 @@ async function getList(collectionName, where, fields = '*', orderBy = {}, page =
 			if (offset < 0) offset = 0;
 
 		}
-	}
+    }
+    }catch(e){
+        console.log(e);
+    }
 
 	// 分页 
 	let query = await db.collection(collectionName)
@@ -696,6 +737,36 @@ async function getList(collectionName, where, fields = '*', orderBy = {}, page =
 
 	return data;
 }
+
+/**
+ * 搜索情况下取得所有数据
+ * @param {*} collectionName 
+ * @param {*} where 
+ * @param {*} fields 
+ * @param {*} orderBy 
+ * @param {*} size 
+ */
+async function gsearchGetAllBig(collectionName, where, fields = '*', orderBy,searchKey, size = MAX_RECORD_SIZE) {
+	size = Number(size);
+	if (size > MAX_RECORD_SIZE) size = MAX_RECORD_SIZE;
+
+	// 计算总数
+	let total = await await count(collectionName, where);
+
+	// 页数
+	let page = Math.ceil(total / size);
+
+	let list = [];
+	for (let i = 1; i <= page; i++) {
+		let data = await getList(collectionName, where, fields, orderBy, i, size, false);
+
+		if (data && data.list)
+			list = list.concat(data.list);
+	}
+
+	return list;
+}
+
 
 /**
  * 大数据情况下取得所有数据
@@ -1059,12 +1130,15 @@ module.exports = {
 	rand,
 	getOne,
 	getAll,
-	getAllBig,
+    getAllBig,
+    gsearchGetAllBig,
 
 	getAllByArray,
 	getList,
 	getListJoin,
 	getListByArray,
 	MAX_RECORD_SIZE,
-	DEFAULT_RECORD_SIZE
+    DEFAULT_RECORD_SIZE,
+    
+    transTempFiles,//文件上传
 }

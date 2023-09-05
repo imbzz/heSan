@@ -1,6 +1,6 @@
 /**
  * Notes: 报名实体
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED 1756612361@qq.com
  * Date: 2021-12-30 19:20:00 
  */
 

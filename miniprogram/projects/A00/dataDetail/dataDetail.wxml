@@ -1,0 +1,90 @@
+<view class="card" wx:if="{{isLoad}}">
+    <van-notify id="van-notify"/>
+    
+    <view class="card-list">
+        <!--简介-->
+        <view style="padding: 30rpx;">
+            <text style="font-size: 40rpx;font-weight: bold;">上报概况 : {{college}}\n</text>
+            <text style="color: #999999;padding-top: 10rpx;font-size: 30rpx;">日期：{{nowDay}} (数据不显示被关闭的学生数据)</text>
+        </view>
+
+        <!-- allForCollege:0,//学院全部
+        allUnForCollege:0,//没验的学院全部
+        allFreshForCollege:0,//学院本科全部
+        unFreshForCollege:0,//本科未完成
+        allGraduateForCollege:0,//研究生全部
+        unGraduateForCollege:0,//研究生未完成
+        allDoctorForCollege:0,//博士全部
+        unDoctorForCollege:0,//博士生未完成 -->
+        <!--全部-->
+        <view style="padding: 0 10rpx 0rpx 30rpx;">
+            <text class="tittleText">全部\n</text>
+            <view style="display: flex;">
+                <!-- <button class="btn1" data-export=' 全部 所有学生' bindtap="gotoExport"> 所有学生
+                    <view class="dataText">{{allForCollege}}</view>
+                </button> -->
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=全部&condition=2&ifopen=1&export=全部 所有学生"> 所有学生
+                    <view class="dataText">{{allForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=全部&condition=1&ifopen=1&export=全部 已完成">已完成
+                    <view class="dataText">{{allForCollege-allUnForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=全部&condition=0&ifopen=1&export=全部 未完成">未完成
+                    <view class="dataText">{{allUnForCollege}}</view>
+                </button>
+            </view>
+
+        </view>
+        <!--本科-->
+        <view style="padding: 0 10rpx 0rpx 30rpx;">
+            <text class="tittleText">本科生\n</text>
+            <view style="display: flex;">
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=本科&condition=2&ifopen=1&export=本科 所有学生">所有学生
+                    <view class="dataText">{{allFreshForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=本科&condition=1&ifopen=1&export=本科 已完成">已完成
+                    <view class="dataText">{{allFreshForCollege-unFreshForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=本科&condition=0&ifopen=1&export=本科 未完成">未完成
+                    <view class="dataText">{{unFreshForCollege}}</view>
+                </button>
+            </view>
+
+        </view>
+        <!--研究生-->
+        <view style="padding: 0 10rpx 10rpx 30rpx;">
+            <text class="tittleText">研究生\n</text>
+            <view style="display: flex;">
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=研究生&condition=2&ifopen=1&export=研究生 所有学生">所有学生
+                    <view class="dataText">{{allGraduateForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=研究生&condition=1&ifopen=1&export=研究生 已完成">已完成
+                    <view class="dataText">{{allGraduateForCollege-unGraduateForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=研究生&condition=0&ifopen=1&export=研究生 未完成">未完成
+                    <view class="dataText">{{unGraduateForCollege}}</view>
+                </button>
+            </view>
+
+        </view>
+        <!--博士 -->
+        <view style="padding: 0 10rpx 10rpx 30rpx;">
+            <text class="tittleText">博士生\n</text>
+            <view style="display: flex;">
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=博士&condition=2&ifopen=1&export=博士 所有学生">所有学生
+                    <view class="dataText">{{allDoctorForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=博士&condition=1&ifopen=1&export=博士 已完成">已完成
+                    <view class="dataText">{{allDoctorForCollege-unDoctorForCollege}}</view>
+                </button>
+                <button class="btn1" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&kind=博士&condition=0&ifopen=1&export=博士 未完成">未完成
+                    <view class="dataText">{{unDoctorForCollege}}</view>
+                </button>
+
+            </view>
+        </view>
+        <button wx:if="{{type==2&&college!='全部'}}" class="btn2" bindtap="url" data-url="../../../pages/admin/user/uploadd/admin_upload_file?college={{college}}&adminId={{adminId}}&password={{password}}">导入数据</button>
+        <button wx:if="{{type==2&&college!='全部'}}" class="btn2" bindtap="url" data-url="../stuDetail/stuDetail?college={{college}}&adminId={{adminId}}&password={{password}}&type={{type}}&condition=2&kind=全部&ifopen=0&export=已关闭类别">已关闭类别</button>
+    </view>
+
+</view>

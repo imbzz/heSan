@@ -22,6 +22,74 @@ class AdminNewsBiz {
 		return desc;
 	}
 
+    /**
+     * 文件存储删除
+     * @param {*} adminId 
+     * @param {*} password 
+     * @param {*} tempFilePath 
+     */
+    static async deleteFile(adminId,password){
+        try{
+            let options={
+                title:'旧文件删除中',
+            }
+            let params ={
+                adminId,
+                password,
+            }
+            let res = await cloudHelper.callCloudSumbit('admin/student_file_delete', params,options);
+            return res;
+        }catch(e){
+            console.log(e);
+        }
+        
+    }
+
+
+    /**
+     * 文件上传
+     * @param {*} adminId
+     * @param {*} college
+     * @param {*} tempFilePath 
+     */
+    static async UploadFile(adminId,password,tempFilePath,oldUrl){
+
+        //清除所以旧数据
+        if(oldUrl!=''){
+            let res = await this.deleteFile(adminId,password);
+            if(!res) return;
+        }
+        // 图片上传到云空间
+		let FileData = await cloudHelper.transTempFileOne(tempFilePath,setting.FILE_ADMIN_STUDENT,adminId+password);
+        try {
+        if(FileData.cloudUrl) {
+		
+		let params = {
+			adminId:adminId,
+            college:password,
+            cloudUrl:FileData.cloudUrl
+        }
+    
+            let options = {
+                title:'文件上传中',
+            }
+            wx.showLoading({
+                title: '文件信息处理中..',
+                mask: true
+            });
+    
+			// 更新数据 从promise 里直接同步返回
+            let res = await cloudHelper.callCloudSumbit('admin/student_file_upload', params,options);
+            if(res){
+            let cloudUrl=res.data;
+            return cloudUrl;
+            }
+        }
+	} catch (err) {
+			console.error(err);
+	}
+    }
+
 	/** 
 	 * 图片上传
 	 * @param {string} newsId 

@@ -3,7 +3,7 @@
        {
          "name": "updatas",
          "type": "timer",
-         "config": "0 */15 7-24 * * * *"
+         "config": "0 */10 8-22 * * * *"
           }
     ]
 

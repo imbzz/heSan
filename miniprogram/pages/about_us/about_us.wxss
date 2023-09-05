@@ -1,6 +1,7 @@
 /* pages/about_us/about_us.wxss */
 .all{
     padding: 30rpx;
+    
 }
 .aboutUs{
     word-break: keep-all;
@@ -14,7 +15,6 @@
     border-radius: 30rpx;
 }
 .miniapp{
-    word-break: keep-all;
     margin-top: 30rpx;
     width: auto;
 	box-sizing: border-box;

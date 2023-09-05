@@ -234,6 +234,18 @@ class BaseModel extends Model {
 		return await super.getAll(where, fields, orderBy, size);
 	}
 
+    /**
+	 * 模糊搜索条件情况下取得所有记录
+	 * @param {*} where 
+	 * @param {*} fields 
+	 * @param {*} orderBy 
+	 * @param {*} size  
+	 */
+	static async searchGetAllBig(where, fields, orderBy,searchKey, size = 1000,mustPID = true) {
+		where = BaseModel._getWhere(where, mustPID);
+		return await super.searchGetAllBig(where, fields, orderBy,searchKey,size);
+	}
+
 
 	/**
 	 * 大数据情况下取得所有记录

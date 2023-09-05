@@ -1,6 +1,6 @@
 /**
  * Notes: 资讯后台管理
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2021-07-11 07:48:00 
  */
 
@@ -68,6 +68,7 @@ class AdminNewsService extends BaseAdminService {
             data[NewsModel.FIELD_PREFIX+'STATUS_CROWDING']=1;
             data[NewsModel.FIELD_PREFIX+'STATUS_ADMIN_REST']=0;
             data[NewsModel.FIELD_PREFIX+'STATUS']=0;
+            data[NewsModel.FIELD_PREFIX+'STATUS_LEVEL']=0;
            console.log(data);
            let result = await NewsModel.insert(data);
             return result;
@@ -84,7 +85,7 @@ class AdminNewsService extends BaseAdminService {
         }catch(e){
             console.log(e);
         }
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/**获取资讯信息 */
@@ -117,7 +118,7 @@ class AdminNewsService extends BaseAdminService {
         }catch(e){
           console.log(e);
         }
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 
 	}
 
@@ -213,12 +214,12 @@ class AdminNewsService extends BaseAdminService {
         
         // }
         console.log(data);
-            data[NewsModel.FIELD_PREFIX+'STATUS_REST']=1;//是否在休息状态
-            data[NewsModel.FIELD_PREFIX+'STATUS_NOMAL']=1;//人数
-            data[NewsModel.FIELD_PREFIX+'STATUS_BUSY']=1;//人数
-            data[NewsModel.FIELD_PREFIX+'STATUS_CROWDING']=1;//人数
-            data[NewsModel.FIELD_PREFIX+'STATUS_ADMIN_REST']=0;//开启状态
-            data[NewsModel.FIELD_PREFIX+'STATUS']=0;//初始化状态
+            // data[NewsModel.FIELD_PREFIX+'STATUS_REST']=1;//是否在休息状态
+            // data[NewsModel.FIELD_PREFIX+'STATUS_NOMAL']=1;//人数
+            // data[NewsModel.FIELD_PREFIX+'STATUS_BUSY']=1;//人数
+            // data[NewsModel.FIELD_PREFIX+'STATUS_CROWDING']=1;//人数
+            // data[NewsModel.FIELD_PREFIX+'STATUS_ADMIN_REST']=0;//开启状态
+            // data[NewsModel.FIELD_PREFIX+'STATUS']=0;//初始化状态
             data[NewsModel.FIELD_PREFIX+'ADD_TIME']=utilTime.time();
         try{
             await NewsModel.edit(meetId,data);
@@ -226,7 +227,7 @@ class AdminNewsService extends BaseAdminService {
             console.log(e);
         }
         
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/**取得资讯分页列表 */
@@ -328,7 +329,7 @@ class AdminNewsService extends BaseAdminService {
         }catch(e){
             console.log(e);
         }
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/**资讯置顶排序设定 */
@@ -342,7 +343,7 @@ class AdminNewsService extends BaseAdminService {
         }catch(e){
             console.log(e);
         }
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 }
 

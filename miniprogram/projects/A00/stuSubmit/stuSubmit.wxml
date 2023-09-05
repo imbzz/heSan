@@ -1,0 +1,24 @@
+<!--projects/A00/stuSubmit/stuSubmit.wxml-->
+<view>
+    <view class="stuForm">
+        <view class="tittle">学生信息：</view>
+        <van-cell-group>
+            <van-field label="学号" value="{{ studentNumber }}" placeholder="请输入学号"    border="{{ false }}" bind:change="onChangeNum" />
+        </van-cell-group>
+        <van-cell-group>
+            <van-field label="班别" value="{{ className }}" placeholder="请输入班别"  border="{{ false }}" bind:change="onChangeClass" />
+        </van-cell-group>
+        <!-- <view class="tittle">学校：</view>
+        <view class="stuPlace" style="padding: 10rpx 0 10rpx 30rpx;">
+            <van-cell title="{{ schoolName == '' ? '点击选择地点' : schoolName }}"  is-link bind:click="showPopup" />
+        </view> -->
+    </view>
+    <view class="tips">
+        温馨提示：信息用于学生申报，直接缓存用户本地，小程序不做云端缓存
+    </view>
+    <button bindtap="onFinishSubmit" style="background-color: #2499f2;color: #fff;margin: 50rpx 20rpx 0 20rpx;border-radius:50rpx;">一键上报</button>
+</view>
+
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+    <van-picker columns="{{ columns }}" show-toolbar bind:cancel="onClose" bind:confirm="onConfirm" />
+</van-popup>

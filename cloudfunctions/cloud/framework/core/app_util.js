@@ -1,7 +1,7 @@
 /**
  * Notes: 云函数业务主逻辑函数
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
- * Date: 2021-02-09 04:00:00 
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
+ * Date: 2022-02-09 04:00:00 
  */
 /**SUCC: 200,
 	SVR: 500, // 服务器错误  

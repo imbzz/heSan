@@ -1,6 +1,6 @@
 /**
  * Notes: 后台操作日志实体
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2020-10-16 19:20:00 
  */
 

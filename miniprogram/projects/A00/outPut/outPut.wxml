@@ -1,0 +1,41 @@
+<van-dialog id="van-dialog" />
+<view class="main-admin bg-admin">
+
+    <view class="login shadow">
+
+        <view class="pic">
+            <image style="height: 200rpx;" src="../skin/images/tabbar/fason.png"></image>
+        </view>
+        <view class="hint">登录</view>
+
+        <view class="form-group margin-top" style="border: 0;">
+            <view class="title" style="width: 100rpx;left:44rpx;margin-right: 30rpx;">学院:</view>
+            <view style="width: 440rpx;">
+                <van-cell title="{{academyName == '' ? '点击选择学院' : academyName }}"  is-link bind:click="showPopup" />
+            </view>
+            
+        </view>
+
+        <view class="form-group">
+            <!-- <van-radio-group value="{{ radio }}" direction="horizontal" bind:change="onChangeStudent">
+                <van-radio name="1">本科生</van-radio>
+                <van-radio name="2">研究生</van-radio>
+            </van-radio-group> -->
+            <view class="title">账号：</view>
+            <input placeholder="请输入账号" maxlength="30" type="" placeholder-class="phc" model:value="{{adm}}"></input>
+        </view>
+
+        <view class="form-group">
+            <view class="title">密码：</view>
+            <input placeholder="请输入密码" maxlength="30" type="password" placeholder-class="phc" model:value="{{pwd}}"></input>
+        </view>
+
+        <button class="btn bg-admin margin-bottom" bindtap="bindLoginTap">登录</button>
+    </view>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom">
+    <van-picker columns="{{ columns }}" show-toolbar bind:cancel="onClose" bind:confirm="onConfirm" />
+</van-popup>
+
+<!-- <view class="hint" wx:if="{{type==2}}">后台可导入,开关闭学生信息</view>
+<view class="hint" wx:if="{{type==3}}">导入信息修改信息请从管理员入口登录</view> -->

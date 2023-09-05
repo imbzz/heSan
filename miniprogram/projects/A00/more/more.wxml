@@ -1,0 +1,61 @@
+<view style="padding: 60rpx 60rpx;margin-top: 0rpx;">
+    <image src="../skin/images/tabbar/team.png"></image>
+</view>
+<view class="tittle">
+    <button class="btn1" bindtap="gotoPage">
+        <view>管理登录</view>
+        <image class="img" src="../skin/images/tabbar/guanlirenyuan.png"></image>
+    </button>
+    <button class="btn2" bindtap="gotoYss">
+        <view>粤核酸3</view>
+        <image class="img" src="../skin/images/tabbar/jiankangma.png"></image>
+    </button>
+</view>
+<view class="tittle2">
+    <button class="btn3" bindtap="gotoSubmit">
+        <view>学生上报</view>
+        <image style="height: 55rpx;width: 55rpx;margin-top: -10rpx;margin-bottom: 8rpx;" src="../skin/images/tabbar/yijianshangbao-.png"></image>
+    </button>
+    <button class="btn4" bindtap="gotoYue">
+        <view>粤省事</view>
+        <image class="img" src="../skin/images/tabbar/yue.jpg"></image>
+    </button>
+</view>
+<view class="tittle3">
+<button class="btn5" bindtap="gotoOutput">
+        <view>上报导出</view>
+        <image style="height: 52rpx;width: 55rpx;margin-top: -10rpx;margin-bottom: 10rpx;"  class="img" src="../skin/images/tabbar/33_daochu.png"></image>
+    </button>
+    
+    <button class="btn6" bindtap="gotoSui">
+        <view>穗康码</view>
+        <image style="height: 52rpx;width: 55rpx;margin-top: -10rpx;margin-bottom: 10rpx;"  class="img" src="../skin/images/tabbar/sui.jpg"></image>
+    </button>
+</view>
+<view class="foot-bottom">
+        <view style="margin-bottom: 30rpx;">
+            <text style="font-size: 24rpx;" bindtap="bindContact">© 联系我们\n</text>
+            <text style="font-size: 24rpx;" bindtap="bindContact">关于小程序</text>
+        </view>
+ </view>
+
+<!-- <view class="card">
+    <view class="card-title">
+        <view style="background-color: #2499f2;color: #fff;text-align: center;font-size: 40rpx;padding: 10rpx;">核酸码</view>
+        <van-tabs active="{{ active }}" bind:change="onChange">
+            <van-tab title="常规采样">
+                <view class="card-main">
+                    <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+                </view>
+                <view style="padding: 10rpx 20rpx 20rpx 30rpx;font-size: 24rpx;color: #999999;">注意：首次使用需用户自行上传核酸码，此后小程序将从您的本地缓存加载核酸码，小程序不做存储</view>
+            </van-tab>
+
+            <van-tab title="大规模采样">
+                <view class="card-main">
+                    <van-uploader file-list="{{ fileList1 }}" bind:after-read="afterRead1" />
+                </view>
+                <view style="padding: 10rpx 20rpx 20rpx 30rpx;font-size: 24rpx;color: #999999;">注意：首次使用需用户自行上传核酸码，此后小程序将从您的本地缓存加载核酸码，小程序不做存储</view>
+            </van-tab>
+        </van-tabs>
+    </view>
+</view> -->

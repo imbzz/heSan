@@ -1,6 +1,6 @@
 /**
  * Notes: 缓存相关函数
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux0730 (wechat)
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2022-01-26 04:00:00 
  */
 

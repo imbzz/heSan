@@ -1,7 +1,7 @@
 <view wx:if="{{!isLoad}}" class="margin-top load loading text-l text-admin"></view>
 
 <view class="main-admin" wx:if="{{isLoad && isAdmin}}">
-
+    <van-notify id="van-notify" />
 	<view class="admin-info bg-admin">
 		<view class="pic"><text class="icon-peoplefill"></text></view>
 		<view class="right">
@@ -39,6 +39,8 @@
 		</view>
         <view class="item" bindtap="url" data-url="../../news/use/howtouse"> <text class="icon-peoplefill text-green"></text> <text class="text-black">操作指南</text>
 		</view> 
+        <view class="item" bindtap="url" data-url="../../../../projects/A00/outPut/outPut?type={{admin.type}}"> <text class="icon-newsfill text-darkgreen"></text> <text class="text-black">上报导入</text>
+		</view>
 	</view>
 
 

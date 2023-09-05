@@ -390,12 +390,12 @@
  }
 
  // 提示成功，同时做后续处理, 最多显示7个汉字长度
- function showSuccToast(title = '操作成功', duration = 1500, callback) {
+ function showSuccToast(title = '操作成功', duration = 2000, callback) {
  	return wx.showToast({
  		title: title,
  		icon: 'success',
  		duration: duration,
- 		mask: true,
+ 		mask: false,
  		success: function () {
  			callback && (setTimeout(() => {
  				callback();

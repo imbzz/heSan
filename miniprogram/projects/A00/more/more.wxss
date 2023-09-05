@@ -1,0 +1,130 @@
+page {
+    background: #2499f2;}
+
+.card {
+    display: flex;
+}
+
+.tittle {
+    display: flex;
+}
+
+.tittle2 {
+    display: flex;
+}
+.tittle3{
+    display: flex;
+}
+
+.card .card-title {
+    margin-top: -10rpx;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 686rpx;
+    height: auto;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%, 28rpx);
+    -ms-transform: translate(-50%, 28rpx);
+    transform: translate(-50%, 28rpx);
+    border-radius: 20rpx;
+}
+
+.card .card-list {
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    background: #fff;
+    height: auto;
+    width: 686rpx;
+    left: 50%;
+}
+
+.card-main {
+    padding: 20rpx 0rpx 10rpx 50rpx;
+}
+
+.btn1 {
+    border-radius: 20rpx 10rpx 10rpx 10rpx;
+    height: 130rpx;
+    margin-left: 35rpx;
+    width: 340rpx;
+    margin-top: 50rpx;
+    background-color: #fff;
+    color: black;
+    font-size: 32rpx;
+    
+}
+
+.btn2 {
+    border-radius: 10rpx 20rpx 10rpx 10rpx;
+    height: 130rpx;
+    right: 20rpx;
+    width: 340rpx;
+    margin-top: 50rpx;
+    background-color: #fff;
+    color: black;
+    font-size: 32rpx;
+}
+
+.btn3 {
+    border-radius: 10rpx 10rpx 10rpx 10rpx;
+    height: 130rpx;
+    margin-left: 34rpx;
+    width: 340rpx;
+    margin-top: 7rpx;
+    margin-bottom: 7rpx;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 32rpx;
+}
+
+.btn4 {
+    border-radius: 10rpx 10rpx 10rpx 10rpx;
+    height: 130rpx;
+    width: 340rpx;
+    margin-top: 7rpx;
+    margin-right: 34rpx;
+    margin-bottom: 7rpx;
+    background-color: #fff;
+    color: black;
+    font-size: 32rpx;
+}
+.btn5{
+    border-radius: 10rpx 10rpx 10rpx 20rpx;
+    height: 130rpx;
+    margin-left: 34rpx;
+    width: 340rpx;
+    margin-top: 0rpx;
+    margin-bottom: 20rpx;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-size: 32rpx;
+}
+.btn6{
+    border-radius: 10rpx 10rpx 20rpx 10rpx;
+    height: 130rpx;
+    width: 340rpx;
+    margin-top: 0rpx;
+    margin-right: 34rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    color: black;
+    font-size: 32rpx;
+}
+
+.img {
+    margin-top: -20rpx;
+    height: 65rpx;
+    width: 65rpx;
+}
+.foot-bottom {
+    margin-top: 20rpx;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    bottom: 50rpx;
+    color: #ffffff;
+}

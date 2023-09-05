@@ -1,6 +1,6 @@
 /**
  * Notes: 预约后台管理
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY cclinux@qq.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2021-12-08 07:48:00 
  */
 
@@ -14,7 +14,7 @@ class AdminTempService extends BaseAdminService {
 		name,
 		times,
 	}) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/**更新数据 */
@@ -23,13 +23,13 @@ class AdminTempService extends BaseAdminService {
 		limit,
 		isLimit
 	}) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 
 	/**删除数据 */
 	async delTemp(id) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 

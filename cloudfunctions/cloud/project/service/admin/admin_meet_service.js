@@ -1,6 +1,6 @@
 /**
  * Notes: 预约后台管理
- * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY www.code3721.com
+ * Ver : CCMiniCloud Framework 2.0.1 ALL RIGHTS RESERVED BY 1756612361@qq.com
  * Date: 2021-12-08 07:48:00 
  */
 
@@ -146,7 +146,7 @@ async insertMeet(adminId, {
     //批量增加 //一天一条数据//映射到ax_day//此命令没有验证是否加入成功
     await DayModel.insertBatch(daysSet);
     return result;//返回的依然是meet的id 标识ax_day的id
-    // this.AppError('开开凯，如有需要请加作者微信：cclinux0730');
+    // this.AppError('此功能为完工，不断完善中：qq:1756612361);
 }
 	/**对已有的单条数据进行更新数据 不更新content和style_set 接着会有单独操作*/
 	async editMeet({
@@ -282,7 +282,7 @@ async insertMeet(adminId, {
         if(!util.isDefined(data[idField])) data[idField] = styleSet;
 		let result=await MeetModel.edit(meetId,data);//把content放入data
         return result;
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 
     }
     
@@ -391,17 +391,17 @@ async insertMeet(adminId, {
         }catch(e){
             console.log(e);
         }
-		//  this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/** 管理员按钮核销 */
 	async checkinJoin(joinId, flag) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/** 管理员扫码核销 */
 	async scanJoin(meetId, code) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		 this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/**
@@ -430,7 +430,7 @@ async insertMeet(adminId, {
 
 	/** 取消某个时间段的所有预约记录 */
 	async cancelJoinByTimeMark(admin, meetId, timeMark, reason) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 
@@ -449,7 +449,7 @@ async insertMeet(adminId, {
         catch(e){
             console.log(e);
         }
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/**获取信息 */
@@ -474,7 +474,7 @@ async insertMeet(adminId, {
 
 	/** 更新日期设置 */
 	async _editDays(meetId, nowDay, daysSetData) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		 this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 
@@ -536,7 +536,7 @@ async insertMeet(adminId, {
 
 	/** 删除 */
 	async delJoin(joinId) {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		 this.AppError('此功能为完工，不断完善中：qq:1756612361');
 
 	}
 
@@ -544,7 +544,7 @@ async insertMeet(adminId, {
 	 * 特殊约定 99=>正常取消 
 	 */
 	async statusJoin(admin, joinId, status, reason = '') {
-		this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		this.AppError('此功能为完工，不断完善中：qq:1756612361');
 	}
 
 	/**修改项目状态 */
@@ -555,7 +555,7 @@ async insertMeet(adminId, {
         }
         try{
         await MeetModel.edit(id,data);
-        // this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+        // this.AppError('此功能为完工，不断完善中：qq:1756612361');
         }
         catch(e){
             console.log(e);
@@ -570,7 +570,7 @@ async insertMeet(adminId, {
             data[MeetModel.FIELD_PREFIX+'ORDER'] = sort;
               }
         await MeetModel.edit(id,data)
-		// this.AppError('此功能暂不开放，如有需要请加作者微信：cclinux0730');
+		// this.AppError('此功能为完工，不断完善中：qq:1756612361');
         }
         catch(e){
             console.log(e);

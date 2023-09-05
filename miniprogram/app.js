@@ -23,8 +23,9 @@ App({
      */
     async onLaunch() {
       // 初始化云环境
+    //   CLOUD_ID_LIST:['hesuanofficial-8gp0jtoi3d51cbd9','cloud1-5gde1hoac3a7d47f'],
       await wx.cloud.init({
-        env: 'hesuanofficial-8gp0jtoi3d51cbd9'
+        env: 'hesan-4gq8nza23c87c325'
       })
   
   
